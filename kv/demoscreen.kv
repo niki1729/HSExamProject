@@ -1,0 +1,21 @@
+#: import labels labels
+
+
+<DemoScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Image:
+            id: demo_image
+            size_hint_y: 3
+            source: "resources/niki.jpg"
+
+        Button:
+            id: button_change_image
+            size_hint_y: 1
+            text: labels.DemoChangeImage
+            color: .05, .05, .05, 1
+            background_down: "grey_color.png"
+            on_release: root.change_image()
+
+
+

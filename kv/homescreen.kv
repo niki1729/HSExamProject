@@ -1,0 +1,17 @@
+<HomeScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            id: welcome_label
+            text: "Welcome to homescreen!"
+            font_size: 40
+            color: 1,0,1,1
+            size_hint_y: 1
+        Button:
+            text: "Press me for fun"
+            size_hint_y: 3
+            color: 1, 1, 0, 1
+            color_before: 1,0,0,1
+            background_down: "grey_color.png"
+            on_release: root.change_color()
+

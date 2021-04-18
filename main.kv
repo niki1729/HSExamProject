@@ -1,0 +1,49 @@
+#: import labels labels
+#: include kv/homescreen.kv
+#: include kv/contentnavigationdrawer.kv
+#: include kv/calculatorscreen.kv
+#: include kv/demoscreen.kv
+#: include kv/p.kv
+
+Screen:
+    MDToolbar:
+        id: toolbar
+        pos_hint: {"top": 1}
+        title: labels.TITLE
+        elevation: 10
+        left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+        md_bg_color: .2, .2, .2, 0.9
+        specific_text_color: 1, 1, 1, 1
+
+
+    NavigationLayout:
+        x: toolbar.height
+        # panel_color: .2, .2, .2, 1
+
+
+
+        ScreenManager:
+
+            size_hint_y: None
+            height:root.height - toolbar.height
+            id: screen_manager
+
+            HomeScreen:
+                name: "home_screen"
+
+            CalculatorScreen:
+                name: "calculator_screen"
+
+            DemoScreen:
+                name: "demo_screen"
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+
+            ContentNavigationDrawer:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer
+
+
