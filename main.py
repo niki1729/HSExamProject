@@ -1,3 +1,4 @@
+import sys
 from random import randint, random
 
 from kivy.core.text import Label
@@ -24,7 +25,7 @@ class P(FloatLayout):
 
 class HomeScreen(Screen):
     def change_color(self):
-        self.ids.welcome_label.color=randint(0,100)/100, randint(0,100)/100, randint(0,100)/100, 1
+        self.ids.welcome_label.color = randint(0, 100) / 100, randint(0, 100) / 100, randint(0, 100) / 100, 1
 
 
 class CalculatorScreen(Screen):
@@ -76,9 +77,10 @@ class CalculatorScreen(Screen):
                 self.ids.calc_inp.text = ""
                 self.new_calc = True
             except:
+                e = sys.exc_info()[0]
                 # self.last_result = self.ids.calc_inp.text
                 # self.ids.calc_inp.text = "Python syntax error!"
-                self.show_popup()
+                self.show_popup(e)
 
     def last_result_print(self):
         self.ids.calc_inp.text = self.last_calc
@@ -101,10 +103,10 @@ class CalculatorScreen(Screen):
             self.eval_function()
         return True
 
-    def show_popup(self):
+    def show_popup(self, e):
         show = P()
-        popup_window = Popup(title="Python syntax error!", content=show, size_hint=(0.5, 0.3), size=(400, 100))
-        # show.ids.popuplabel.text = "Python syntax error!"
+        popup_window = Popup(title="Invalid Expression!", content=show, size_hint=(0.5, 0.3), size=(400, 100))
+        # show.ids.popuplabel.text = str(e)
         popup_window.open()
 
     def if_int(self, result):
@@ -120,7 +122,7 @@ list_images = ["resources/niki.jpg", "resources/roseschloss2.jpg", "resources/tu
 class DemoScreen(Screen):
     def change_image(self):
         self.ids.demo_image.source = list_images[randint(0, len(list_images) - 1)]
-        self.ids.button_change_image.color=randint(0,100)/100, randint(0,100)/100, randint(0,100)/100, 1
+        self.ids.button_change_image.color = randint(0, 100) / 100, randint(0, 100) / 100, randint(0, 100) / 100, 1
 
 
 class ContentNavigationDrawer(BoxLayout):

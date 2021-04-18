@@ -232,7 +232,10 @@ class Eval:
             return ClosedBracket()
 
         if element == "√":
-            return UnaryRoot()
+            if self.is_unary_sign(previous_token):
+                return UnaryRoot()
+            else:
+                raise Exception("Invalid Expression")
 
         return Number(float(element))
 
