@@ -10,7 +10,7 @@ SETTINGS = "Settings"
 NDHomeScreen = "Home"
 NDCalculator = "Calculator"
 NDChooseWhatYouWant = "Choose what you want:"
-NDConverter = "Demo"
+NDDemo = "Demo"
 
 CalculatorDelete = "Del"
 CalculatorClear = "C"

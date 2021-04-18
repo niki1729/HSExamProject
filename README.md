@@ -1,8 +1,9 @@
-USEFULLAPP
+USEFULAPP
 
-I do this Project for Highschool computer science final test.
+I do this Project for Highschool computer science final test, it's only for the Exam, the more developed App will be in https://github.com/niki1729/UsefullApp/
 This App will have different features accessible by the ContentNavigationDrawer.
-Now I plan to implement a simple calculator, a converter and TicTacToe against a bot (written by myself).
+The App has a simple calculator (the eval process is written by me, I use the postfix form to calculate the expression), also the App has an Demoscreen with few random pictures
 In the future I will implement other things.
 
-In addition, I will like to implement i18n library to change easily the language of the App (English, German, French and probably Russian).
+I use labels.py to change faster the language I use, I only need to change there and I don't need to go throw all the text places.
+
